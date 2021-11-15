@@ -1,0 +1,18 @@
+package com.sparta.review;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+@EnableFeignClients
+@EnableScheduling
+@SpringBootApplication
+@EnableJpaAuditing // 시간 자동 변경이 가능하도록 합니다.
+public class ReviewApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(ReviewApplication.class, args);
+    }
+}

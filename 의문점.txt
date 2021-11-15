@@ -1,0 +1,31 @@
+-- Home Controller에서
+    @GetMapping("/") 삭제하고 로그인시, 
+타임리프가 처리 안된 index.html을 가져와서 admin으로 연결됨!
+-> 누가? '/'를 부르는가? 누가?????
+-> WebSecurityConfig의 .defaultSuccessUrl("/")는 범인이 아니었습니다.
+-> 범인은 tomcat 이었다고 합니다.
+
+
+
+1. 왜 / 이 들어가지나?
+튕겨내주는게 없어요
+제일 쉬운 방법은 JS에서 구현하는거 (jwt query 쓰기-(예전에 했던거))
+
+.antMatchers("/").permitAll() 얘 건들지말고 JS에서 처리하기 : 제일 쉽다.
+
+
+2. permit all의 의미 ()
+
+permit all 떼어버리면?
+-> 서버에 session 정보가 없음.
+-> jwt는 세션 방식이 아님
+-> 다 막아버림.
+-> location.href = / -> 응 안열어줘~
+
+
+localhost:8080/
+아무것도 없음
+헤더 토큰이든
+세션에 정보든
+
+토큰 -> jwt 필터 

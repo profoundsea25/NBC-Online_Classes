@@ -1,0 +1,18 @@
+질문 11/23
+1. UserApiController.class에서 authenticate() 는 뭐하는 친구?
+- security 문서를 참고 권장 (로그인 플로우 그림) 
+iD PW 확인
+
+2. loadUserByUsername() 은? - 우리가 만든 테이블 user객체로 반환 (User Entity를 가져옴)
+
+- UserDetails 클래스는 무엇? (security의 userDetail 형식)
+
+- getAuthorities 은 내부에서 어떻게 작동합니까?
+인가(authoritization)를 위한 ROLE 정보를 세팅하기 위한 메소드
+
+3. JwtAuthenticationFilter() 의 역할은?
+request가 오면 무조건 filter가 작동
+"Bearer " ? 토큰   형식 중 하나
+
+4. signUp에서 jwt토큰 부분 날려도 무방하지 않습니까?
+선택
